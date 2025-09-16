@@ -18,7 +18,7 @@ Turbo C/C++
 커서 위치 제어 함수
 
 없음 (직접 구현 필요)
-
+```
 #include <conio.h> <br> gotoxy(int x, int y);
 
 gotoxy 함수 구현 (Windows API 사용)
@@ -31,9 +31,9 @@ void gotoxy(int x, int y) {
     // 콘솔 출력 핸들을 가져와 커서 위치를 설정
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
 }
-
+```
 사용 예제: Hello 출력
-
+```
 #include <stdio.h>
 #include <windows.h>
 
@@ -53,7 +53,7 @@ void gotoxy(int x, int y) {
     COORD Pos = {x - 1, y - 1};
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
 }
-
+```
 2.2. 화면 지우기
 콘솔 화면의 모든 내용을 지웁니다.
 
@@ -64,7 +64,7 @@ Visual C++
 Turbo C/C++
 
 화면 지우기 함수
-
+```
 #include <stdlib.h> <br> system("cls");
 
 #include <conio.h> <br> clrscr();
@@ -86,7 +86,7 @@ int main(void) {
     }
     return 0;
 }
-
+```
 3. 키보드 입력 처리
 3.1. ASCII 코드와 스캔 코드
 아스키 코드(ASCII Code): 'a', '1', '!' 등 문자에 부여된 고유한 숫자 값입니다.
@@ -96,7 +96,7 @@ int main(void) {
 getch() 함수로 확장 키를 입력받으면, 첫 번째 값으로 0 또는 224(0xe0)가 반환되고, 두 번째 값으로 실제 스캔 코드가 반환됩니다.
 
 키 코드 확인 예제
-
+```
 #include <stdio.h>
 #include <conio.h>
 
@@ -117,7 +117,7 @@ int main(void) {
     }
     return 0;
 }
-
+```
 3.2. 화살표 키를 이용한 이동
 화살표 키
 
@@ -160,7 +160,7 @@ x++
 없음
 
 화살표 키로 'A' 문자 이동시키기
-
+```
 #include <stdio.h>
 #include <conio.h>
 #include <windows.h>
@@ -216,12 +216,12 @@ void gotoxy(int x, int y) {
     COORD Pos = {x - 1, y - 1};
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
 }
-
+```
 4. 도형 그리기
 확장 완성형 코드를 사용하여 텍스트 모드에서 사각형과 같은 도형을 그립니다.
 
 정사각형 그리기 예제
-
+```
 #include <stdio.h>
 
 void draw_square(int size);
@@ -262,7 +262,7 @@ void draw_square(int size) {
     for (i = 0; i < size; i++) printf("%c", line_h);
     printf("%c\n", corner_br);
 }
-
+```
 5. 난수 생성
 stdlib.h와 time.h를 사용하여 난수를 생성합니다. srand(time(NULL))로 시드값을 초기화하여 매번 다른 난수를 얻을 수 있습니다.
 
@@ -293,7 +293,8 @@ rand() % 100
 
 0~99 사이의 나머지를 구함
 
-중복 없는 난수 생성 (로또 번호)
+중복 없는 난수 생성 (로또 번호) 
+```
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -321,7 +322,7 @@ int main(void) {
     
     return 0;
 }
-
+```
 6. 가변 인수
 printf처럼 인수의 개수가 정해지지 않은 함수를 만들 때 사용합니다. stdarg.h 헤더 파일이 필요합니다.
 
@@ -334,7 +335,7 @@ va_arg(ap, type): 인수를 하나씩 읽어옴
 va_end(ap): 가변 인수 처리 종료
 
 가변 인수를 사용한 합계 함수
-
+```
 #include <stdio.h>
 #include <stdarg.h>
 
@@ -359,4 +360,4 @@ double sum(int count, ...) {
 
     return total;
 }
-
+```
