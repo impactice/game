@@ -37,14 +37,17 @@
 ## 🃏 카드 프로그래밍
 
 ### 카드 구조체 정의
-```c typedef struct {
+```c
+typedef struct {
     int order;     // 카드 순위
     char shape[4]; // 카드 모양 (♠ ◆ ♥ ♣)
     char number[3];// 숫자 또는 문자 (A,2~10,J,Q,K)
-} Card; ```
+} Card;
+```
 
 ### 카드 섞기 (방법 2)
-```c void shuffle(Card *deck, int n) {
+```c
+void shuffle(Card *deck, int n) {
     int i, rnd;
     Card temp;
     for(i=0; i<n; i++) {
@@ -55,7 +58,8 @@
         deck[i] = deck[rnd];
         deck[rnd] = temp;
     }
-} ```
+}
+```
 
 ---
 
@@ -67,15 +71,18 @@
 - 각 음의 주파수 = `440 * pow(2, n/12)`  
 
 ### 주파수 계산 함수
-```c int index[] = {0, 2, 4, 5, 7, 9, 11, 12};
+```c
+int index[] = {0, 2, 4, 5, 7, 9, 11, 12};
 
 int calc_frequency(int octave, int idx) {
     double base = 32.7032; // 옥타브 1의 도(C)
     return (int)(base * pow(2, octave-1 + index[idx]/12.0));
-} ```
+}
+```
 
 ### Beep 함수 활용
-```c #include <windows.h>
+```c
+#include <windows.h>
 #include <math.h>
 
 int main(void) {
@@ -85,14 +92,16 @@ int main(void) {
         Beep(freq[i], 500); // 0.5초
     }
     return 0;
-} ```
+}
+```
 
 ---
 
 ## 🔗 자료 구조
 
 ### 연결 리스트 (게임 Replay 응용)
-```c typedef struct Node {
+```c
+typedef struct Node {
     char key;
     struct Node *next;
 } Node;
@@ -104,10 +113,12 @@ void insert(char key) {
     newNode->key = key;
     newNode->next = head;
     head = newNode;
-} ```
+}
+```
 
 ### 스택 (카드 더미 예시)
-```c typedef struct Node {
+```c
+typedef struct Node {
     int data;
     struct Node *link;
 } Node;
@@ -128,7 +139,8 @@ int pop() {
     top = top->link;
     free(temp);
     return data;
-} ```
+}
+```
 
 ---
 
