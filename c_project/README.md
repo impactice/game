@@ -1,4 +1,4 @@
-원본 
+## 원본 
 ```
 #include <stdio.h>
 #include <time.h>
@@ -204,10 +204,10 @@ void gotoxy(int x, int y)
 
 <img width="1727" height="921" alt="image" src="https://github.com/user-attachments/assets/ac8b0eaf-c4a6-43f5-8d63-e830d737ecc6" />
 
-단점: 가독성이 안 좋아서 시간을 읽기 힘들다  
+- 단점: 가독성이 안 좋아서 시간을 읽기 힘들다  
 
 
-수정 버전_1
+## 수정 버전_1
 ```
 #include <stdio.h>
 #include <time.h>
