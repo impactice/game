@@ -1051,5 +1051,225 @@ int main(void) {
 
 <img width="1365" height="699" alt="image" src="https://github.com/user-attachments/assets/00d49354-edc4-42a1-a8a5-f06e2cdd6710" />
 
+## 알람 ver.4
+- 알람 삭제 기능, 알람을 설정했으면 순서대로 보이도록 변경 
 
+```
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <windows.h>
+
+#define MAX_ALARMS 10
+
+int alarm_hours[MAX_ALARMS];
+int alarm_minutes[MAX_ALARMS];
+int alarm_count = 0;
+
+int zero[20] = {1,1,1,1, 1,0,0,1, 1,0,0,1, 1,0,0,1, 1,1,1,1};
+int one[20]  = {0,0,1,0, 0,0,1,0, 0,0,1,0, 0,0,1,0, 0,0,1,0};
+int two[20]  = {1,1,1,1, 0,0,0,1, 1,1,1,1, 1,0,0,0, 1,1,1,1};
+int three[20]= {1,1,1,1, 0,0,0,1, 1,1,1,1, 0,0,0,1, 1,1,1,1};
+int four[20] = {1,0,0,1, 1,0,0,1, 1,1,1,1, 0,0,0,1, 0,0,0,1};
+int five[20] = {1,1,1,1, 1,0,0,0, 1,1,1,1, 0,0,0,1, 1,1,1,1};
+int six[20]  = {1,0,0,0, 1,0,0,0, 1,1,1,1, 1,0,0,1, 1,1,1,1};
+int seven[20]= {1,1,1,1, 0,0,0,1, 0,0,0,1, 0,0,0,1, 0,0,0,1};
+int eight[20]= {1,1,1,1, 1,0,0,1, 1,1,1,1, 1,0,0,1, 1,1,1,1};
+int nine[20] = {1,1,1,1, 1,0,0,1, 1,1,1,1, 0,0,0,1, 0,0,0,1};
+
+void gotoxy(int x, int y) {
+    COORD Pos = {x - 1, y - 1};
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
+}
+
+void draw_frame() {
+    for (int x = 1; x <= 80; x++) {
+        gotoxy(x, 2); printf("═");
+        gotoxy(x, 12); printf("═");
+    }
+    for (int y = 3; y <= 11; y++) {
+        gotoxy(1, y); printf("║");
+        gotoxy(80, y); printf("║");
+    }
+    gotoxy(1, 2); printf("╔");
+    gotoxy(80, 2); printf("╗");
+    gotoxy(1, 12); printf("╚");
+    gotoxy(80, 12); printf("╝");
+}
+
+long time_to_number(void) {
+    time_t current = time(NULL);
+    struct tm *d = localtime(&current);
+    return d->tm_hour * 10000 + d->tm_min * 100 + d->tm_sec;
+}
+
+void digit_print(int dim[], int row) {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+    for (int i = row * 4; i <= row * 4 + 3; i++) {
+        printf(dim[i] ? "█" : " ");
+    }
+    printf("   ");
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
+}
+
+void print_time_digits(int time_number) {
+    int digits[6];
+    for (int i = 5; i >= 0; i--) {
+        digits[i] = time_number % 10;
+        time_number /= 10;
+    }
+
+    int start_x = 5, start_y = 4, spacing = 8;
+    for (int row = 0; row < 5; row++) {
+        gotoxy(start_x, start_y + row);
+        for (int i = 0; i < 6; i++) {
+            switch (digits[i]) {
+                case 0: digit_print(zero, row); break;
+                case 1: digit_print(one, row); break;
+                case 2: digit_print(two, row); break;
+                case 3: digit_print(three, row); break;
+                case 4: digit_print(four, row); break;
+                case 5: digit_print(five, row); break;
+                case 6: digit_print(six, row); break;
+                case 7: digit_print(seven, row); break;
+                case 8: digit_print(eight, row); break;
+                case 9: digit_print(nine, row); break;
+            }
+            if (i == 1 || i == 3) printf("   ");
+        }
+    }
+
+    gotoxy(start_x + spacing * 2 - 2, start_y + 1); printf("■");
+    gotoxy(start_x + spacing * 2 - 2, start_y + 3); printf("■");
+    gotoxy(start_x + spacing * 4 - 2, start_y + 1); printf("■");
+    gotoxy(start_x + spacing * 4 - 2, start_y + 3); printf("■");
+}
+
+void print_date_and_weekday() {
+    time_t current = time(NULL);
+    struct tm *d = localtime(&current);
+    char* weekdays[] = {"일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"};
+    gotoxy(5, 10);
+    printf("오늘 날짜: %04d-%02d-%02d (%s)", d->tm_year + 1900, d->tm_mon + 1, d->tm_mday, weekdays[d->tm_wday]);
+}
+
+void print_alarm_list() {
+    gotoxy(5, 14);
+    printf("╔══════════════════════════════╗");
+    for (int i = 0; i < alarm_count; i++) {
+        gotoxy(5, 15 + i);
+        printf("║ 알람 %d: %02d:%02d                ║", i + 1, alarm_hours[i], alarm_minutes[i]);
+    }
+    gotoxy(5, 15 + alarm_count);
+    printf("╚══════════════════════════════╝");
+}
+
+void sort_alarms() {
+    for (int i = 0; i < alarm_count - 1; i++) {
+        for (int j = i + 1; j < alarm_count; j++) {
+            if (alarm_hours[i] > alarm_hours[j] ||
+               (alarm_hours[i] == alarm_hours[j] && alarm_minutes[i] > alarm_minutes[j])) {
+                int temp_h = alarm_hours[i];
+                int temp_m = alarm_minutes[i];
+                alarm_hours[i] = alarm_hours[j];
+                alarm_minutes[i] = alarm_minutes[j];
+                alarm_hours[j] = temp_h;
+                alarm_minutes[j] = temp_m;
+            }
+        }
+    }
+}
+
+void delete_alarm(int index) {
+    if (index < 0 || index >= alarm_count) return;
+    for (int i = index; i < alarm_count - 1; i++) {
+        alarm_hours[i] = alarm_hours[i + 1];
+        alarm_minutes[i] = alarm_minutes[i + 1];
+    }
+    alarm_count--;
+}
+
+void check_alarm(int hour, int minute) {
+    static int triggered[MAX_ALARMS] = {0};
+    for (int i = 0; i < alarm_count; i++) {
+        if (hour == alarm_hours[i] && minute == alarm_minutes[i] && !triggered[i]) {
+            for (int j = 0; j < 3; j++) {
+                Beep(1000, 300);
+                Sleep(200);
+            }
+            triggered[i] = 1;
+            gotoxy(40, 11);
+            printf("🔔 알람 %d 시간입니다! 🔔", i + 1);
+        }
+    }
+}
+
+int main(void) {
+    system("chcp 65001 > nul");
+    system("color 0A");
+    system("cls");
+
+    printf("디지털 시계 프로그램\n\n");
+    printf("알람 시간을 여러 개 입력하세요 (24시간제, -1 입력 시 종료)\n");
+
+    while (alarm_count < MAX_ALARMS) {
+        int hour, minute;
+        printf("시: ");
+        scanf("%d", &hour);
+        if (hour == -1) break;
+        printf("분: ");
+        scanf("%d", &minute);
+        alarm_hours[alarm_count] = hour;
+        alarm_minutes[alarm_count] = minute;
+        alarm_count++;
+        sort_alarms();
+    }
+
+    int choice;
+    do {
+        system("cls");
+        printf("현재 설정된 알람 목록:\n");
+        for (int i = 0; i < alarm_count; i++) {
+            printf("  [%d] %02d:%02d\n", i + 1, alarm_hours[i], alarm_minutes[i]);
+        }
+        printf("\n삭제할 알람 번호를 입력하세요 (0 입력 시 계속 진행): ");
+        scanf("%d", &choice);
+        if (choice > 0 && choice <= alarm_count) {
+            delete_alarm(choice - 1);
+            printf("알람이 삭제되었습니다.\n");
+            Sleep(1000);
+        }
+    } while (choice != 0);
+
+    printf("\n알람이 설정되었습니다. 아무 키나 누르면 시계를 시작합니다.\n");
+    getch();
+    system("cls");
+    draw_frame();
+
+    while (!kbhit()) {
+        gotoxy(1, 4);
+        long time_number = time_to_number();
+        print_time_digits(time_number);
+        print_date_and_weekday();
+        print_alarm_list();
+
+        time_t current = time(NULL);
+        struct tm *d = localtime(&current);
+        check_alarm(d->tm_hour, d->tm_min);
+
+        gotoxy(5, 13);
+        printf("아무 키나 누르면 종료합니다.");
+        Sleep(1000);
+    }
+
+    system("cls");
+    printf("프로그램을 종료합니다. 좋은 하루 되세요!\n");
+    return 0;
+}
+```
+
+
+<img width="1366" height="693" alt="image" src="https://github.com/user-attachments/assets/9c3744a0-6872-4e33-9d07-021742d859fa" />
 
