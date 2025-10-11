@@ -1047,6 +1047,9 @@ int main(void) {
 }
 ```
 
+<img width="1366" height="698" alt="image" src="https://github.com/user-attachments/assets/a4297a03-e0a9-4cff-be11-4933f97da0a3" />
+
+<img width="1365" height="699" alt="image" src="https://github.com/user-attachments/assets/00d49354-edc4-42a1-a8a5-f06e2cdd6710" />
 
 
 
