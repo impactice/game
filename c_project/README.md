@@ -1270,6 +1270,11 @@ int main(void) {
 }
 ```
 
+<img width="1364" height="692" alt="image" src="https://github.com/user-attachments/assets/f470487b-ccbf-4c38-a5f2-127d62546b0b" />
+
+
+<img width="1366" height="702" alt="image" src="https://github.com/user-attachments/assets/5cd39760-cc60-47ac-92e6-eda05087999c" />
+
 
 <img width="1366" height="693" alt="image" src="https://github.com/user-attachments/assets/9c3744a0-6872-4e33-9d07-021742d859fa" />
 
