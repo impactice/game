@@ -1281,6 +1281,10 @@ int main(void) {
 ## 디자인 다듬기
 - 화면이 축소 되었다가 다시 늘리면 화면이 깨지는 문제 발견 -> 화면이 늘리면 안 깨지게 변경과 알람을 시계 나오는 화면에서 삭제 되도록 변경 
 
+<img width="1334" height="749" alt="image" src="https://github.com/user-attachments/assets/1f16fe35-f511-4615-8b99-39a0988c162b" />
+
+
+
 ```
 #include <stdio.h>
 #include <time.h>
