@@ -1278,8 +1278,8 @@ int main(void) {
 
 <img width="1366" height="693" alt="image" src="https://github.com/user-attachments/assets/9c3744a0-6872-4e33-9d07-021742d859fa" />
 
-## 알람 ver.5
-- 알람 삭제 기능, 알람을 설정했으면 순서대로 보이도록 변경
+## 디자인 다듬기
+- 화면이 축소 되었다가 다시 늘리면 화면이 깨지는 문제 발견 -> 화면이 늘리면 안 깨지게 변경과 알람을 시계 나오는 화면에서 삭제 되도록 변경 
 
 
 
