@@ -1562,5 +1562,382 @@ int main(void) {
 <img width="1238" height="780" alt="image" src="https://github.com/user-attachments/assets/2d2a3643-f09b-4924-8c6d-e2ec933c13e3" />
 
 
+## 팩맨 게임 추가하기 
+
+```
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <windows.h>
+#include <string.h>
+
+#define MAX_ALARMS 10
+
+// ===================================================================
+// 전역 변수 및 시계 숫자 데이터
+// ===================================================================
+
+int alarm_hours[MAX_ALARMS];
+int alarm_minutes[MAX_ALARMS];
+int alarm_count = 0;
+
+int zero[20] = {1,1,1,1, 1,0,0,1, 1,0,0,1, 1,0,0,1, 1,1,1,1};
+int one[20]  = {0,0,1,0, 0,0,1,0, 0,0,1,0, 0,0,1,0, 0,0,1,0};
+int two[20]  = {1,1,1,1, 0,0,0,1, 1,1,1,1, 1,0,0,0, 1,1,1,1};
+int three[20]= {1,1,1,1, 0,0,0,1, 1,1,1,1, 0,0,0,1, 1,1,1,1};
+int four[20] = {1,0,0,1, 1,0,0,1, 1,1,1,1, 0,0,0,1, 0,0,0,1};
+int five[20] = {1,1,1,1, 1,0,0,0, 1,1,1,1, 0,0,0,1, 1,1,1,1};
+int six[20]  = {1,0,0,0, 1,0,0,0, 1,1,1,1, 1,0,0,1, 1,1,1,1};
+int seven[20]= {1,1,1,1, 0,0,0,1, 0,0,0,1, 0,0,0,1, 0,0,0,1};
+int eight[20]= {1,1,1,1, 1,0,0,1, 1,1,1,1, 1,0,0,1, 1,1,1,1};
+int nine[20] = {1,1,1,1, 1,0,0,1, 1,1,1,1, 0,0,0,1, 0,0,0,1};
+
+// ===================================================================
+// 유틸리티 및 시계 관련 함수
+// ===================================================================
+
+void gotoxy(int x, int y) {
+    COORD pos = { (short)x, (short)y };
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
+}
+
+void set_console_cursor_visibility(int visible) {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    CONSOLE_CURSOR_INFO cursorInfo;
+    GetConsoleCursorInfo(hConsole, &cursorInfo);
+    cursorInfo.bVisible = visible;
+    SetConsoleCursorInfo(hConsole, &cursorInfo);
+}
+
+void set_text_color(int color) {
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+}
+
+void draw_frame() {
+    for (int x = 1; x <= 80; x++) { gotoxy(x, 1); printf("═"); gotoxy(x, 11); printf("═"); }
+    for (int y = 2; y <= 10; y++) { gotoxy(1, y); printf("║"); gotoxy(80, y); printf("║"); }
+    gotoxy(1, 1); printf("╔"); gotoxy(80, 1); printf("╗"); gotoxy(1, 11); printf("╚"); gotoxy(80, 11); printf("╝");
+}
+
+long time_to_number(void) {
+    time_t current = time(NULL);
+    struct tm *d = localtime(&current);
+    return d->tm_hour * 10000 + d->tm_min * 100 + d->tm_sec;
+}
+
+void digit_print(int dim[], int row) {
+    set_text_color(10);
+    for (int i = row * 4; i <= row * 4 + 3; i++) { printf(dim[i] ? "█" : " "); }
+    printf("   ");
+    set_text_color(15);
+}
+
+void print_time_digits(int time_number) {
+    int digits[6];
+    for (int i = 5; i >= 0; i--) { digits[i] = time_number % 10; time_number /= 10; }
+    int start_x = 5, start_y = 3, spacing = 8;
+    for (int row = 0; row < 5; row++) {
+        gotoxy(start_x, start_y + row);
+        for (int i = 0; i < 6; i++) {
+            switch (digits[i]) {
+                case 0: digit_print(zero, row); break; case 1: digit_print(one, row); break;
+                case 2: digit_print(two, row); break; case 3: digit_print(three, row); break;
+                case 4: digit_print(four, row); break; case 5: digit_print(five, row); break;
+                case 6: digit_print(six, row); break; case 7: digit_print(seven, row); break;
+                case 8: digit_print(eight, row); break; case 9: digit_print(nine, row); break;
+            }
+            if (i == 1 || i == 3) printf("   ");
+        }
+    }
+    gotoxy(start_x + spacing * 2 - 2, start_y + 1); printf("■"); gotoxy(start_x + spacing * 2 - 2, start_y + 3); printf("■");
+    gotoxy(start_x + spacing * 4 - 2, start_y + 1); printf("■"); gotoxy(start_x + spacing * 4 - 2, start_y + 3); printf("■");
+}
+
+void print_date_and_weekday() {
+    time_t current = time(NULL);
+    struct tm *d = localtime(&current);
+    char* weekdays[] = {"일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"};
+    gotoxy(5, 9); printf("오늘 날짜: %04d-%02d-%02d (%s)", d->tm_year + 1900, d->tm_mon + 1, d->tm_mday, weekdays[d->tm_wday]);
+}
+
+void print_alarm_list() {
+    gotoxy(5, 13); printf("╔════════════════════════════════════╗");
+    if (alarm_count == 0) {
+        gotoxy(5, 14); printf("║ 설정된 알람이 없습니다.            ║");
+    } else {
+        for (int i = 0; i < alarm_count; i++) {
+            gotoxy(5, 14 + i); printf("║ 알람 %d: %02d:%02d   [삭제:%d]           ║", i + 1, alarm_hours[i], alarm_minutes[i], i + 1);
+        }
+    }
+    gotoxy(5, 14 + (alarm_count == 0 ? 1 : alarm_count)); printf("╚════════════════════════════════════╝");
+}
+
+void sort_alarms() { for (int i = 0; i < alarm_count - 1; i++) for (int j = i + 1; j < alarm_count; j++) if (alarm_hours[i] > alarm_hours[j] || (alarm_hours[i] == alarm_hours[j] && alarm_minutes[i] > alarm_minutes[j])) { int temp_h = alarm_hours[i]; int temp_m = alarm_minutes[i]; alarm_hours[i] = alarm_hours[j]; alarm_minutes[i] = alarm_minutes[j]; alarm_hours[j] = temp_h; alarm_minutes[j] = temp_m; } }
+void delete_alarm(int index) { if (index < 0 || index >= alarm_count) return; for (int i = index; i < alarm_count - 1; i++) { alarm_hours[i] = alarm_hours[i + 1]; alarm_minutes[i] = alarm_minutes[i + 1]; } alarm_count--; }
+
+void handle_alarm_deletion() {
+    char input_buffer[20];
+    int del;
+    gotoxy(5, 16 + (alarm_count == 0 ? 1 : alarm_count));
+    printf("삭제할 알람 번호를 입력하세요 (0 입력 시 취소): ");
+    fgets(input_buffer, sizeof(input_buffer), stdin);
+    sscanf(input_buffer, "%d", &del);
+    if (del > 0 && del <= alarm_count) {
+        delete_alarm(del - 1);
+        sort_alarms();
+        gotoxy(5, 17 + (alarm_count == 0 ? 1 : alarm_count));
+        printf("알람 %d이(가) 삭제되었습니다. 잠시 후 돌아갑니다.", del);
+        Sleep(1500);
+    }
+}
+
+void check_alarm(int hour, int minute) {
+    static int triggered[MAX_ALARMS] = {0};
+    for (int i = 0; i < alarm_count; i++) {
+        if (hour == alarm_hours[i] && minute == alarm_minutes[i] && !triggered[i]) {
+            for (int j = 0; j < 3; j++) { Beep(1000, 300); Sleep(200); }
+            triggered[i] = 1;
+            gotoxy(40, 10); printf("🔔 알람 %d 시간입니다! 🔔", i + 1);
+        } else if (hour != alarm_hours[i] || minute != alarm_minutes[i]) {
+            triggered[i] = 0;
+        }
+    }
+}
+
+// ===================================================================
+// 팩맨 게임 함수 (몬스터 추가 및 최종 수정)
+// ===================================================================
+
+#define MAP_WIDTH 38
+#define MAP_HEIGHT 18
+
+char pacman_map[MAP_HEIGHT][MAP_WIDTH + 1] = {
+    "#####################################", "#...................................#", "#.#####.#########.###.#########.###.#", "#.#...#.#.......#.#.#.#.......#.#...#", "#.#...#.#.#####.#.#.#.#.#####.#.#...#", "#.#...#.#.#...#.#...#.#.#...#.#.#...#", "#.#...#.#.#...#.#.#.#.#.#...#.#.#...#", "#.#####.#####.###.###.#####.#.#####.", "#...................................#", "#.#####.###.#########.###.#########", "#.#...#.#.#.#.......#.#.#.#.........#", "#.#...#.#.#.#.#####.#.#.#.#.#######.#", "#.#...#...#.#.#...#.#...#.#.#.....#.#", "#.#...#####.#.#...#.#.###.#.#.###.#.#", "#.#.....#...#.....#.#...#...#...#...#", "#.#######.#########.###.#####.###.#", "#...................................#", "#####################################"
+};
+
+void play_pacman_game() {
+    int player_x = 1, player_y = 1;
+    int score = 0, total_dots = 0;
+
+    // --- 몬스터(고스트) 변수 ---
+    int ghost1_x = MAP_WIDTH / 2 - 2, ghost1_y = MAP_HEIGHT / 2 - 1;
+    int ghost2_x = MAP_WIDTH / 2 + 2, ghost2_y = MAP_HEIGHT / 2 - 1;
+    int ghost_move_counter = 0; // 고스트 이동 속도 조절용
+
+    char current_map[MAP_HEIGHT][MAP_WIDTH + 1];
+    for(int y=0; y<MAP_HEIGHT; ++y) {
+        strcpy(current_map[y], pacman_map[y]);
+        for(int x=0; x<MAP_WIDTH; ++x) {
+            if(current_map[y][x] == '.') total_dots++;
+        }
+    }
+    
+    char pacman_anim_chars[2] = {'C', 'c'};
+    int anim_frame = 0;
+
+    // --- 최초 맵 그리기 ---
+    system("cls");
+    set_console_cursor_visibility(0);
+
+    for (int y = 0; y < MAP_HEIGHT; y++) {
+        gotoxy(0, y);
+        for (int x = 0; x < MAP_WIDTH; x++) {
+            if (current_map[y][x] == '#') { set_text_color(9); printf("█"); }
+            else if (current_map[y][x] == '.') { set_text_color(15); printf("●"); }
+            else { printf(" "); }
+        }
+    }
+    gotoxy(0, MAP_HEIGHT + 1);
+    set_text_color(15);
+    printf("SCORE: %d / %d\n", score, total_dots);
+    printf("이동: ←↑↓→ (방향키) | 나가기: Q");
+
+    // --- 게임 루프 시작 ---
+    while (1) {
+        int prev_x = player_x, prev_y = player_y;
+        int prev_g1_x = ghost1_x, prev_g1_y = ghost1_y;
+        int prev_g2_x = ghost2_x, prev_g2_y = ghost2_y;
+
+        // --- 플레이어 이동 처리 ---
+        if (kbhit()) {
+            int key = getch();
+            if (key == 224) {
+                key = getch();
+                switch (key) {
+                    case 75: if (current_map[player_y][player_x - 1] != '#') player_x--; break;
+                    case 77: if (current_map[player_y][player_x + 1] != '#') player_x++; break;
+                    case 72: if (current_map[player_y - 1][player_x] != '#') player_y--; break;
+                    case 80: if (current_map[player_y + 1][player_x] != '#') player_y++; break;
+                }
+            } else {
+                if (key == 'q' || key == 'Q') break;
+            }
+        }
+
+        // --- 고스트 이동 처리 (팩맨이 2번 움직일 때 1번 움직임) ---
+        ghost_move_counter++;
+        if (ghost_move_counter % 2 == 0) {
+            // 고스트 1 (빨강)
+            if (ghost1_x < player_x && current_map[ghost1_y][ghost1_x + 1] != '#') ghost1_x++;
+            else if (ghost1_x > player_x && current_map[ghost1_y][ghost1_x - 1] != '#') ghost1_x--;
+            else if (ghost1_y < player_y && current_map[ghost1_y + 1][ghost1_x] != '#') ghost1_y++;
+            else if (ghost1_y > player_y && current_map[ghost1_y - 1][ghost1_x] != '#') ghost1_y--;
+
+            // 고스트 2 (초록)
+            if (ghost2_y < player_y && current_map[ghost2_y + 1][ghost2_x] != '#') ghost2_y++;
+            else if (ghost2_y > player_y && current_map[ghost2_y - 1][ghost2_x] != '#') ghost2_y--;
+            else if (ghost2_x < player_x && current_map[ghost2_y][ghost2_x + 1] != '#') ghost2_x++;
+            else if (ghost2_x > player_x && current_map[ghost2_y][ghost2_x - 1] != '#') ghost2_x--;
+        }
+
+        // --- 잔상 제거 및 화면 업데이트 ---
+        // 이전 플레이어 위치 지우기
+        if (prev_x != player_x || prev_y != player_y) {
+            gotoxy(prev_x, prev_y);
+            printf(" ");
+        }
+        // 이전 고스트 위치 지우기
+        gotoxy(prev_g1_x, prev_g1_y); printf(" ");
+        gotoxy(prev_g2_x, prev_g2_y); printf(" ");
+
+        // --- 새로 그리기 ---
+        // 고스트 1 그리기
+        gotoxy(ghost1_x, ghost1_y); set_text_color(12); printf("M");
+        // 고스트 2 그리기
+        gotoxy(ghost2_x, ghost2_y); set_text_color(10); printf("W");
+
+        // 점 먹기 및 점수판 업데이트
+        if (current_map[player_y][player_x] == '.') {
+            current_map[player_y][player_x] = ' '; score++; Beep(600, 50);
+            gotoxy(7, MAP_HEIGHT + 1); set_text_color(15); printf("%d", score);
+        }
+
+        // 플레이어 그리기
+        gotoxy(player_x, player_y); set_text_color(14); printf("%c", pacman_anim_chars[anim_frame % 2]);
+        anim_frame++;
+
+        // --- 충돌 검사 (게임 오버 조건) ---
+        if ((player_x == ghost1_x && player_y == ghost1_y) || (player_x == ghost2_x && player_y == ghost2_y)) {
+            gotoxy((MAP_WIDTH / 2) - 5, MAP_HEIGHT / 2); set_text_color(12);
+            printf("GAME OVER");
+            Beep(150, 500);
+            Sleep(2000);
+            break;
+        }
+
+        // --- 승리 조건 ---
+        if (score >= total_dots) {
+            gotoxy((MAP_WIDTH / 2) - 10, MAP_HEIGHT / 2); set_text_color(10);
+            printf("YOU WIN! CONGRATULATIONS!");
+            Beep(523, 200); Beep(659, 200); Beep(783, 200);
+            Sleep(3000);
+            break;
+        }
+        
+        Sleep(80); // 게임 전체 속도 조절
+    }
+}
+
+
+// ===================================================================
+// main 함수 (최종 안정화 버전)
+// ===================================================================
+
+int main(void) {
+    system("chcp 65001 > nul");
+    system("title 디지털 시계 & 팩맨");
+    system("mode con: cols=82 lines=25");
+    system("color 0A");
+
+    printf("디지털 시계 프로그램\n\n");
+    printf("알람 시간을 입력하세요 (24시간제). 모두 입력했다면 시에 -1을 입력하세요.\n");
+
+    while (alarm_count < MAX_ALARMS) {
+        int hour = 0, minute = 0;
+        char input_buffer[20];
+
+        printf("시: ");
+        if (fgets(input_buffer, sizeof(input_buffer), stdin) == NULL) break;
+        if (sscanf(input_buffer, "%d", &hour) != 1) {
+            printf("숫자만 입력해주세요.\n");
+            continue;
+        }
+
+        if (hour == -1) break;
+        if (hour < 0 || hour > 23) {
+            printf("잘못된 시간입니다. (0-23 사이 입력)\n");
+            continue;
+        }
+
+        printf("분: ");
+        if (fgets(input_buffer, sizeof(input_buffer), stdin) == NULL) break;
+        if (sscanf(input_buffer, "%d", &minute) != 1) {
+            printf("숫자만 입력해주세요.\n");
+            continue;
+        }
+
+        if (minute < 0 || minute > 59) {
+            printf("잘못된 분입니다. (0-59 사이 입력)\n");
+            continue;
+        }
+
+        alarm_hours[alarm_count] = hour;
+        alarm_minutes[alarm_count] = minute;
+        alarm_count++;
+        sort_alarms();
+    }
+
+    printf("\n알람 설정이 완료되었습니다. 아무 키나 누르면 시계를 시작합니다.\n");
+    getch();
+
+    while (1) {
+        system("cls");
+        set_console_cursor_visibility(0);
+        
+        draw_frame();
+        long time_number = time_to_number();
+        print_time_digits(time_number);
+        print_date_and_weekday();
+        print_alarm_list();
+        
+        time_t current = time(NULL);
+        struct tm *d = localtime(&current);
+        check_alarm(d->tm_hour, d->tm_min);
+
+        gotoxy(5, 12);
+        printf("d: 알람 삭제 | g: 팩맨 게임 시작 | Any other key: 종료");
+        
+        Sleep(1000); 
+
+        if (kbhit()) {
+            char ch = getch();
+            if (ch == 'd' || ch == 'D') {
+                set_console_cursor_visibility(1);
+                handle_alarm_deletion();
+            } else if (ch == 'g' || ch == 'G') {
+                play_pacman_game();
+            } else {
+                if (ch == -32 || ch == 0 || ch == 224) {
+                    getch(); 
+                    continue;
+                }
+                break;
+            }
+        }
+    }
+
+    system("cls");
+    printf("프로그램을 종료합니다. 좋은 하루 되세요!\n");
+    set_console_cursor_visibility(1);
+    return 0;
+}
+```
+
+<img width="1729" height="927" alt="image" src="https://github.com/user-attachments/assets/a413d7d6-446b-4031-845a-4958115ef3e0" />
+
+
+<img width="1381" height="814" alt="image" src="https://github.com/user-attachments/assets/19987773-a31c-4961-805d-c3adfa088486" />
+
 
 
