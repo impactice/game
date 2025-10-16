@@ -2563,3 +2563,44 @@ int main(void) {
 
 <img width="1728" height="918" alt="image" src="https://github.com/user-attachments/assets/be016a29-3767-421a-9c8c-02297bb71321" />
 
+tasks.json (수정)
+
+```
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe build active file",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe", // C++ 컴파일러 g++.exe로 변경
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-lgdiplus", // GDI+ 라이브러리 링크 옵션
+                "-lgdi32",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true // 이 작업을 기본 빌드로 설정
+            },
+            "detail": "compiler: C:\\msys64\\ucrt64\\bin\\g++.exe"
+        }
+    ]
+}
+```
+
+
+
+
+
+
+
