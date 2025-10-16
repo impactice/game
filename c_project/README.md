@@ -3247,6 +3247,7 @@ int main(void) {
     return 0;
 }
 ```
+<img width="818" height="640" alt="image" src="https://github.com/user-attachments/assets/64908d96-fed8-4d40-9e9b-04b7ecaa205b" />
 
 
 
