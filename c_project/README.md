@@ -2561,3 +2561,5 @@ int main(void) {
 }
 ```
 
+<img width="1728" height="918" alt="image" src="https://github.com/user-attachments/assets/be016a29-3767-421a-9c8c-02297bb71321" />
+
