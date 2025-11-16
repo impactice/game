@@ -1,0 +1,1188 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.2/staging' branch; Version is '6000.2.12f1 (e89d5df0e333) revision 15244637'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-jwh56" at "2025-11-14T01:48:33.3800344Z"
+OS: 'Windows 11  (10.0.26100) 64bit Professional' Language: 'ko' Physical Memory: 15697 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+Date: 2025-11-14T01:48:33Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.2.12f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+C:/Users/jwh56/My project (2)
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+58522
+-job-worker-count
+7
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name
+AssetImport
+Successfully changed project path to: C:/Users/jwh56/My project (2)
+C:/Users/jwh56/My project (2)
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [26236]  Target information:
+
+Player connection [26236]  * "[IP] 192.168.204.1 [Port] 0 [Flags] 2 [Guid] 3261303286 [EditorId] 3261303286 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-75IT1KA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [26236]  * "[IP] 192.168.10.1 [Port] 0 [Flags] 2 [Guid] 3261303286 [EditorId] 3261303286 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-75IT1KA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [26236]  * "[IP] 172.30.18.243 [Port] 0 [Flags] 2 [Guid] 3261303286 [EditorId] 3261303286 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-75IT1KA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [26236] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [26236] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 7
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 13.33 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.2.12f1 (e89d5df0e333)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.2.12f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/jwh56/My project (2)/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon(TM) Graphics (ID=0x1636)
+    Vendor:   ATI
+    VRAM:     7848 MB
+    Driver:   31.0.21018.23005
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.2.12f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.2.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.2.12f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56480
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.2.12f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.2.12f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.007337 seconds.
+- Loaded All Assemblies, in  1.015 seconds
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.542 seconds
+Domain Reload Profiling: 1546ms
+	BeginReloadAssembly (431ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (2ms)
+	RebuildCommonClasses (90ms)
+	RebuildNativeTypeToScriptingClass (28ms)
+	initialDomainReloadingComplete (124ms)
+	LoadAllAssembliesAndSetupDomain (331ms)
+		LoadAssemblies (409ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (325ms)
+			TypeCache.Refresh (321ms)
+				TypeCache.ScanAssembly (302ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (543ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (468ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (80ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (103ms)
+			ProcessInitializeOnLoadAttributes (203ms)
+			ProcessInitializeOnLoadMethodAttributes (77ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.17.4'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-jwh56"
+[Licensing::IpcConnector] LicenseClient-jwh56 channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-jwh56-6000.2.12" at "2025-11-14T01:48:36.5100002Z"
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              5ab4c0729b114021b98df27d6e567781
+  Correlation Id:          e7390747e7871c22d753c57bb676e8d1
+  External correlation Id: 7743762695140671288
+  Machine Id:              WqZHt2XeqM3cwu7mio/LyuwlFEw=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-jwh56-6000.2.12" (connect: 0.00s, validation: 0.00s, handshake: 2.11s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-jwh56-6000.2.12-notifications" at "2025-11-14T01:48:38.6210462Z"
+[Licensing::Module] Licensing Background thread has ended after 5.24s
+[Licensing::Module] Licensing is initialized (took 2.16s).
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-ARP4-2TZD-3CUN-ZGFA-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: 2025-12-22T02:44:26Z
+[Licensing::Module] License group:
+  Id: 14569691882734-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+- Loaded All Assemblies, in  3.298 seconds
+Refreshing native plugins compatible for Editor in 1.59 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.019 seconds
+Domain Reload Profiling: 4308ms
+	BeginReloadAssembly (2415ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (44ms)
+	RebuildCommonClasses (50ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (59ms)
+	LoadAllAssembliesAndSetupDomain (749ms)
+		LoadAssemblies (575ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (312ms)
+			TypeCache.Refresh (236ms)
+				TypeCache.ScanAssembly (217ms)
+			BuildScriptInfoCaches (58ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (1019ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (736ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (183ms)
+			ProcessInitializeOnLoadAttributes (467ms)
+			ProcessInitializeOnLoadMethodAttributes (65ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 1.82 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6126 unused Assets / (5.1 MB). Loaded Objects now: 6819.
+Memory consumption went from 134.3 MB to 129.2 MB.
+Total: 13.108100 ms (FindLiveObjects: 1.051300 ms CreateObjectMapping: 1.388700 ms MarkObjects: 6.949100 ms  DeleteObjects: 3.715400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 907123.538558 seconds.
+  path: Assets/PQchan.prefab
+  artifactKey: Guid(9e645bc9b2b8eb247b7bc3a1107e24d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQchan.prefab using Guid(9e645bc9b2b8eb247b7bc3a1107e24d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4ace08bfe673615ab71df9fc4dafad7d') in 1.1077837 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 145
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000085 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Face_Normal_p2.tga
+  artifactKey: Guid(83cb81247c912414f9301804221a78b8) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Face_Normal_p2.tga using Guid(83cb81247c912414f9301804221a78b8) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '8d52886dcf8c98b74c9677806df59e8a') in 0.4140939 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000108 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Face_AOQ_guruguru.tga
+  artifactKey: Guid(b58b3a8e4ad4447929817fb4457d49eb) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Face_AOQ_guruguru.tga using Guid(b58b3a8e4ad4447929817fb4457d49eb) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '4a819a52575e0c90cc16f7978e0769f8') in 0.0417834 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/icon
+  artifactKey: Guid(01773817d016f49579792a7b2dd1aaf5) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Textures/icon using Guid(01773817d016f49579792a7b2dd1aaf5) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '035ffae0515daea84f65d75d9f3a624f') in 0.0220292 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Face_Surprised_p2.tga
+  artifactKey: Guid(a3e77f3d639c149429eb7a09468f9132) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Face_Surprised_p2.tga using Guid(a3e77f3d639c149429eb7a09468f9132) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'c80a55ae6112c794f0af653890b325b7') in 0.0587788 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/Give_Me_Job.wav
+  artifactKey: Guid(1fd43fa479fd141229baa7ea1a7ebd95) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/Give_Me_Job.wav using Guid(1fd43fa479fd141229baa7ea1a7ebd95) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'cfdc4632ed4e5cc96a6cd7f6cd8cc8a0') in 0.0768418 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/I_Am_Full.wav
+  artifactKey: Guid(88797d9e8e3ae483a85a1e49ce666159) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/I_Am_Full.wav using Guid(88797d9e8e3ae483a85a1e49ce666159) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '8a16c98d9edfe75580714e01c7f1e8c2') in 0.0613592 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/PQAssets/Query-Chan/Materials/mat_Face_SAD_EYECLOSE_MOUTHOPEN.mat
+  artifactKey: Guid(15594129887ae46c29ec083e5802d74b) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Materials/mat_Face_SAD_EYECLOSE_MOUTHOPEN.mat using Guid(15594129887ae46c29ec083e5802d74b) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'be94856639fd334dee4e79aab4654671') in 0.0437086 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/Cheer_Up.wav
+  artifactKey: Guid(d98a1581c36554d46821a0ec2568d3ed) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/Cheer_Up.wav using Guid(d98a1581c36554d46821a0ec2568d3ed) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '796dea407f72f2580aeaf2a6f5030c79') in 0.0682532 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000076 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Face_AOQ_cold.tga
+  artifactKey: Guid(17d032a3595ff46a7bc1f70ce77b6c10) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Face_AOQ_cold.tga using Guid(17d032a3595ff46a7bc1f70ce77b6c10) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '9f161087bb3e626f085e9a0a70a4a414') in 0.0407295 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/PQAssets/Query-Chan/Sounds/Voice/02_Shouts/Take_Care.wav
+  artifactKey: Guid(aaffab1c203204415b8953b621134089) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Sounds/Voice/02_Shouts/Take_Care.wav using Guid(aaffab1c203204415b8953b621134089) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'a1f94243a125318ece4645559f65b888') in 0.0678855 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/PQAssets/Query-Chan/Sounds/Voice/01_Greetings/Hello.wav
+  artifactKey: Guid(6b65f815f51884684b48bf352749617f) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Sounds/Voice/01_Greetings/Hello.wav using Guid(6b65f815f51884684b48bf352749617f) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'f8ee454b7c5b50df1e3045f477bc41d2') in 0.0676271 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/PQAssets/Query-Chan/Sounds/Voice/02_Shouts/Lets_Go.wav
+  artifactKey: Guid(b11d3a096b9f74cda973a1f14cad7f1a) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Sounds/Voice/02_Shouts/Lets_Go.wav using Guid(b11d3a096b9f74cda973a1f14cad7f1a) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'a985eba867e08b5fcc0f9eaa7eba54b0') in 0.0602368 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/Go_Away_Pain.wav
+  artifactKey: Guid(a6059497bdfb74d91834a26639b5565c) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/Go_Away_Pain.wav using Guid(a6059497bdfb74d91834a26639b5565c) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '0540b03f733bdea43e019f90cbec77e9') in 0.0613458 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/PQAssets/Query-Chan/Sounds/Voice/01_Greetings/Good_Night_02.wav
+  artifactKey: Guid(e94337e44087e44b99fc5664701b3b4d) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Sounds/Voice/01_Greetings/Good_Night_02.wav using Guid(e94337e44087e44b99fc5664701b3b4d) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '5386be9fb00a0cd8b1378756ff335879') in 0.0634882 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Face_Fun_p1.tga
+  artifactKey: Guid(014b8243a64cd4c9e856f5c65aa5f61b) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Face_Fun_p1.tga using Guid(014b8243a64cd4c9e856f5c65aa5f61b) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '7987879128bdc5c1fe04de0d6da3eb5d') in 0.0494757 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Cube_Left.tga
+  artifactKey: Guid(627e282aa2071604fb2eaf0c1090cf10) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Cube_Left.tga using Guid(627e282aa2071604fb2eaf0c1090cf10) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '322d765596b18d3a490395b87114fa49') in 0.0388005 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Terrain Textures/Grass.png
+  artifactKey: Guid(c54f2942b4a974977bab77cb6fbc1b81) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Terrain Textures/Grass.png using Guid(c54f2942b4a974977bab77cb6fbc1b81) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'c6aa3265f35532ebfa99983a30b5dff7') in 0.0396382 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/My_Turn.wav
+  artifactKey: Guid(f04dff3e48c784b629448c06241ed1da) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/My_Turn.wav using Guid(f04dff3e48c784b629448c06241ed1da) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '5ef6ff9591e02ba05f9b149b5fd251e5') in 0.061864 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Cube_Right.tga
+  artifactKey: Guid(9a78f4d9ee72dac4bba19baa944bdca0) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Cube_Right.tga using Guid(9a78f4d9ee72dac4bba19baa944bdca0) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '3b3ffab5b9cf496e410f836007737658') in 0.0373204 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/Fun.wav
+  artifactKey: Guid(77ba11a04bcd14017ba992fbfdcf873c) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/Fun.wav using Guid(77ba11a04bcd14017ba992fbfdcf873c) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '2a50fa935aa82eab644696c0bb2e6877') in 0.0624925 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/Bad_Conditions.wav
+  artifactKey: Guid(190f0206b42374947ae1c9657578eb1d) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/Bad_Conditions.wav using Guid(190f0206b42374947ae1c9657578eb1d) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '0ba36b3026fda3a635c4278769be9d72') in 0.0650462 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/Good_Job_02.wav
+  artifactKey: Guid(f55f5100047454df295d7bacdd5f86ae) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/Good_Job_02.wav using Guid(f55f5100047454df295d7bacdd5f86ae) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'f0d146c3d74d2f3e0e22d82bc2949334') in 0.0627304 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/PQAssets/Query-Chan/Shaders/PQ_Fur.shader
+  artifactKey: Guid(31afcab1f6b95464bb722fef13083cd8) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Shaders/PQ_Fur.shader using Guid(31afcab1f6b95464bb722fef13083cd8) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '71092054782c42250e102d5b9985b0ef') in 0.0386886 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/Go_Charge.wav
+  artifactKey: Guid(33e1b233139fb4218879c3927ae47037) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/Go_Charge.wav using Guid(33e1b233139fb4218879c3927ae47037) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'd163eb269dba2bbbd5884c880ce622a0') in 0.0619876 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/PQAssets/Query-Chan/Materials/mat_Face_SURPRISED_EYECLOSE_MOUTHOPEN.mat
+  artifactKey: Guid(b8b158e0e0fc649d2bdb66aaa013a61f) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Materials/mat_Face_SURPRISED_EYECLOSE_MOUTHOPEN.mat using Guid(b8b158e0e0fc649d2bdb66aaa013a61f) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '543c9eaf437a70de3b7325c3f54d548d') in 0.034739 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/PQAssets/Query-Chan/Sounds/Voice/02_Shouts/Thank_You.wav
+  artifactKey: Guid(f7f02e06a5b114d108c5798137fd8aea) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Sounds/Voice/02_Shouts/Thank_You.wav using Guid(f7f02e06a5b114d108c5798137fd8aea) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'a3298bb6ab0f34ee4c96a6d00bc0572d') in 0.0649322 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/AI_DeepLearning.wav
+  artifactKey: Guid(12e2f3c64fcc34d16a52649d998cdd0b) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/AI_DeepLearning.wav using Guid(12e2f3c64fcc34d16a52649d998cdd0b) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'a2c82fd73e49cbff913e5d3cd0672986') in 0.0682855 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/PQAssets/Query-Chan/Materials/mat_Face_FUN_EYEOPEN_MOUTHCLOSE.mat
+  artifactKey: Guid(11486c0c42f424fd088a48693e962ba7) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Materials/mat_Face_FUN_EYEOPEN_MOUTHCLOSE.mat using Guid(11486c0c42f424fd088a48693e962ba7) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'a54c3750308700b639af83a83046f6a6') in 0.0322225 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/PQAssets/Query-Chan/Materials/mat_Face_ANGER_EYEOPEN_MOUTHOPEN.mat
+  artifactKey: Guid(730b76b1b3958413ba32a4717ff523aa) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Materials/mat_Face_ANGER_EYEOPEN_MOUTHOPEN.mat using Guid(730b76b1b3958413ba32a4717ff523aa) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '1da61ad294f5a29d8b502a0c2627ba61') in 0.0319172 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/A-ha.wav
+  artifactKey: Guid(bd4e94e27f83d4676be0451c9a041fcb) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/A-ha.wav using Guid(bd4e94e27f83d4676be0451c9a041fcb) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'bfae777a897053c84f5f2aea5ca9699a') in 0.0675694 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/PQAssets/Query-Chan/Shaders/PQ_HW_Ghost.shader
+  artifactKey: Guid(28d329a9a4823450988e1ee067695193) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Shaders/PQ_HW_Ghost.shader using Guid(28d329a9a4823450988e1ee067695193) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '85384f87e4f0bd218ecbb247c3a49d3b') in 0.0344802 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000075 seconds.
+  path: Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/Good_Job_01.wav
+  artifactKey: Guid(5c2d3ed96880a4fdda56c27580107b08) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Sounds/Voice/03_Others/Good_Job_01.wav using Guid(5c2d3ed96880a4fdda56c27580107b08) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'ba53d4904eed954f5fbb3882a1265aab') in 0.0713162 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/PQAssets/Query-Chan/Models/PQchan_Movement.controller
+  artifactKey: Guid(8d70d6262572c44748cf8239b0f169ac) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Models/PQchan_Movement.controller using Guid(8d70d6262572c44748cf8239b0f169ac) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'd2338f045e513a8b5fd02d5ac4c9c47f') in 0.0302982 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 22
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/PQAssets/Query-Chan/Sounds/Voice/01_Greetings/See_You.wav
+  artifactKey: Guid(08a2304a77e844dafb771c15894a641c) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Sounds/Voice/01_Greetings/See_You.wav using Guid(08a2304a77e844dafb771c15894a641c) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '833b66f4ae98cfc299af123e1aab52a1') in 0.0939301 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/PQAssets/Query-Chan/Materials/mat_Body.mat
+  artifactKey: Guid(0f7fb12b140dc45dba5332f52910c559) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Materials/mat_Body.mat using Guid(0f7fb12b140dc45dba5332f52910c559) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '9c4008be0fb9db1d5dee631eabe4e830') in 0.0355703 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/PQAssets/Query-Chan/Shaders/PQ_TransBlue.shader
+  artifactKey: Guid(80e0f1eea59da4a4d950a6047492b7ff) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Shaders/PQ_TransBlue.shader using Guid(80e0f1eea59da4a4d950a6047492b7ff) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '0cf584eca76b7d0228430abeb3a9f82e') in 0.0318156 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/PQAssets/Query-Chan/Documents/Query-Chan_license_logo.png
+  artifactKey: Guid(f02a0be9b4e494eeda226c92303df204) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Documents/Query-Chan_license_logo.png using Guid(f02a0be9b4e494eeda226c92303df204) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '2d3e1537e2cf2cd3083257d60b89ec63') in 0.042989 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/PQAssets/Query-Chan/Materials/mat_Face_SURPRISED_EYEOPEN_MOUTHCLOSE.mat
+  artifactKey: Guid(39565adae40e84e209636968b34b30c6) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Materials/mat_Face_SURPRISED_EYEOPEN_MOUTHCLOSE.mat using Guid(39565adae40e84e209636968b34b30c6) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '9598657870927414517cef60a6f00de7') in 0.029948 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000092 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Face_Fun_p2.tga
+  artifactKey: Guid(e03e0b84501c244298364fdb01d98301) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Face_Fun_p2.tga using Guid(e03e0b84501c244298364fdb01d98301) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'ffd45f0f8cfccc79d3d9bb42d6d375fa') in 0.0407658 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/PQAssets/Query-Chan/Shaders
+  artifactKey: Guid(91a6ea97cd9e242059820e9dfbc9c45d) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/PQAssets/Query-Chan/Shaders using Guid(91a6ea97cd9e242059820e9dfbc9c45d) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: '9e016bda049df85abc4654e659209f17') in 0.0271695 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.039033 seconds.
+  path: Assets/Scripts/QueryChanController.js
+  artifactKey: Guid(aff21b6b87b42874189cdf9524c64ece) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/QueryChanController.js using Guid(aff21b6b87b42874189cdf9524c64ece) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0b4737464ccf1c866fe542aa479458e0') in 0.0015719 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 114.966397 seconds.
+  path: Assets/Scripts
+  artifactKey: Guid(8b9f79e8ec7c94a84a9179a0fac8bfb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts using Guid(8b9f79e8ec7c94a84a9179a0fac8bfb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f0952e5cae41ad0ac9bf0f4dbe47a898') in 0.0011907 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 21.30 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 26 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6128 unused Assets / (13.7 MB). Loaded Objects now: 6980.
+Memory consumption went from 161.3 MB to 147.5 MB.
+Total: 29.026900 ms (FindLiveObjects: 1.239900 ms CreateObjectMapping: 1.862400 ms MarkObjects: 13.035500 ms  DeleteObjects: 12.886200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 209.426862 seconds.
+  path: Assets/Scripts/QueryChanController.cs
+  artifactKey: Guid(7b70c5bc2a1679b49b0dc67f23e3395a) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Scripts/QueryChanController.cs using Guid(7b70c5bc2a1679b49b0dc67f23e3395a) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter) -> (artifact id: 'e45dbdda20de5b3e1770d8a2d4c2cf8f') in 0.0268364 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-ARP4-2TZD-3CUN-ZGFA-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: 2025-12-22T02:44:26Z
+[Licensing::Module] License group:
+  Id: 14569691882734-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+- Loaded All Assemblies, in  2.252 seconds
+Refreshing native plugins compatible for Editor in 3.14 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.878 seconds
+Domain Reload Profiling: 4127ms
+	BeginReloadAssembly (847ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (103ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (261ms)
+	RebuildCommonClasses (96ms)
+	RebuildNativeTypeToScriptingClass (32ms)
+	initialDomainReloadingComplete (71ms)
+	LoadAllAssembliesAndSetupDomain (1203ms)
+		LoadAssemblies (1014ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (491ms)
+			TypeCache.Refresh (24ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (432ms)
+			ResolveRequiredComponents (26ms)
+	FinalizeReload (1879ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1412ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (11ms)
+			BeforeProcessingInitializeOnLoad (298ms)
+			ProcessInitializeOnLoadAttributes (940ms)
+			ProcessInitializeOnLoadMethodAttributes (136ms)
+			AfterProcessingInitializeOnLoad (20ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (37ms)
+Refreshing native plugins compatible for Editor in 3.89 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 25 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6134 unused Assets / (13.8 MB). Loaded Objects now: 6872.
+Memory consumption went from 161.7 MB to 147.9 MB.
+Total: 35.311500 ms (FindLiveObjects: 1.682400 ms CreateObjectMapping: 2.793000 ms MarkObjects: 10.924000 ms  DeleteObjects: 19.909100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 19.946488 seconds.
+  path: Assets/Scripts/QueryChanController.cs
+  artifactKey: Guid(7b70c5bc2a1679b49b0dc67f23e3395a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/QueryChanController.cs using Guid(7b70c5bc2a1679b49b0dc67f23e3395a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f2840d8b0eddaf2a3f9743bbb37c702c') in 0.005389 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-ARP4-2TZD-3CUN-ZGFA-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: 2025-12-22T02:44:26Z
+[Licensing::Module] License group:
+  Id: 14569691882734-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+- Loaded All Assemblies, in  1.712 seconds
+Refreshing native plugins compatible for Editor in 3.08 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.373 seconds
+Domain Reload Profiling: 3077ms
+	BeginReloadAssembly (415ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (14ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (97ms)
+	RebuildCommonClasses (62ms)
+	RebuildNativeTypeToScriptingClass (24ms)
+	initialDomainReloadingComplete (72ms)
+	LoadAllAssembliesAndSetupDomain (1130ms)
+		LoadAssemblies (937ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (386ms)
+			TypeCache.Refresh (20ms)
+				TypeCache.ScanAssembly (1ms)
+			BuildScriptInfoCaches (338ms)
+			ResolveRequiredComponents (20ms)
+	FinalizeReload (1374ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1073ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (9ms)
+			BeforeProcessingInitializeOnLoad (252ms)
+			ProcessInitializeOnLoadAttributes (673ms)
+			ProcessInitializeOnLoadMethodAttributes (119ms)
+			AfterProcessingInitializeOnLoad (15ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (33ms)
+Refreshing native plugins compatible for Editor in 4.44 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 25 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6134 unused Assets / (13.8 MB). Loaded Objects now: 6875.
+Memory consumption went from 161.5 MB to 147.8 MB.
+Total: 35.018200 ms (FindLiveObjects: 1.523500 ms CreateObjectMapping: 1.902000 ms MarkObjects: 12.454500 ms  DeleteObjects: 19.134500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 191.911454 seconds.
+  path: Assets/Scripts/QueryChanController.cs
+  artifactKey: Guid(7b70c5bc2a1679b49b0dc67f23e3395a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/QueryChanController.cs using Guid(7b70c5bc2a1679b49b0dc67f23e3395a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a7a5ac949296af3012769347889bd5b1') in 0.0040426 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 161.415798 seconds.
+  path: Assets/PQAssets/Query-Chan
+  artifactKey: Guid(404fe761a6427497e8b5a5035c8f2a5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan using Guid(404fe761a6427497e8b5a5035c8f2a5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9c0904eecff4bb9e57b15fc78c0f8c7b') in 0.0011075 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.864979 seconds.
+  path: Assets/PQchan.prefab
+  artifactKey: Guid(9e645bc9b2b8eb247b7bc3a1107e24d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQchan.prefab using Guid(9e645bc9b2b8eb247b7bc3a1107e24d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bc40fd081ac1132934e71180af41bcde') in 0.9908843 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 144
+
+========================================================================
+Received Import Request.
+  Time since last request: 83.797783 seconds.
+  path: Assets/New Terrain.asset
+  artifactKey: Guid(90bb8eaa034dda5429017c7747c991e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Terrain.asset using Guid(90bb8eaa034dda5429017c7747c991e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9f16445f3bf9b2a520a7e999083c486a') in 0.0111397 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 311.648669 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/Background/bg_christmas.png
+  artifactKey: Guid(d489912bc831c4ddb898bbe7a677e308) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/Background/bg_christmas.png using Guid(d489912bc831c4ddb898bbe7a677e308) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4f8867ac9e3d4fd7efb9c2c1882b66c8') in 0.0963853 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000072 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/Background/bg_player2.png
+  artifactKey: Guid(05474e97e637e42ed91de62d3a484f71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/Background/bg_player2.png using Guid(05474e97e637e42ed91de62d3a484f71) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '053a674febabfa3514f1fb0d5a0e87a9') in 0.059949 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000087 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/Background/bg_player.png
+  artifactKey: Guid(5acce5df3efc54407b39905ad1c511c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/Background/bg_player.png using Guid(5acce5df3efc54407b39905ad1c511c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ae0dc3bd6baf7ebad3f38c4ab2c0a9e5') in 0.0470928 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/icon/PQ_PowerOfGames.png
+  artifactKey: Guid(9b0e99331d884404fa5329556602d044) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/icon/PQ_PowerOfGames.png using Guid(9b0e99331d884404fa5329556602d044) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c3e528762ba1f16adf966a328e089e30') in 0.052942 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.716390 seconds.
+  path: Assets/PQAssets/Query-Chan/Documents/Query-Chan_license_logo.png
+  artifactKey: Guid(f02a0be9b4e494eeda226c92303df204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Documents/Query-Chan_license_logo.png using Guid(f02a0be9b4e494eeda226c92303df204) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ca778ed98274f1a2b75e1dc519dc6dac') in 0.0684436 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000069 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Body.tga
+  artifactKey: Guid(1db2cc12302c74f4ea350f86176ca592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Body.tga using Guid(1db2cc12302c74f4ea350f86176ca592) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2b702b675a90a6e24c38434f7aca402e') in 0.0515345 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000118 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Cube_Left.tga
+  artifactKey: Guid(627e282aa2071604fb2eaf0c1090cf10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Cube_Left.tga using Guid(627e282aa2071604fb2eaf0c1090cf10) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3aaebd32b1d9512d60cd097994528728') in 0.0466788 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000081 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Cube_Right.tga
+  artifactKey: Guid(9a78f4d9ee72dac4bba19baa944bdca0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Cube_Right.tga using Guid(9a78f4d9ee72dac4bba19baa944bdca0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ddce03c5be9f029fcbcd73ee4d206d6b') in 0.0495234 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000105 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Face_Fun_p2.tga
+  artifactKey: Guid(e03e0b84501c244298364fdb01d98301) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Face_Fun_p2.tga using Guid(e03e0b84501c244298364fdb01d98301) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '98ec686b099e857bcae42d6560fe568e') in 0.052898 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Face_Fun_p1.tga
+  artifactKey: Guid(014b8243a64cd4c9e856f5c65aa5f61b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Face_Fun_p1.tga using Guid(014b8243a64cd4c9e856f5c65aa5f61b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ee7f8d2b7babf880f9acbc8f056f1547') in 0.0368987 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000079 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Face_Sad_p4.tga
+  artifactKey: Guid(2af2a807047994f3795a6cf73933d478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Face_Sad_p4.tga using Guid(2af2a807047994f3795a6cf73933d478) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '066ba71313912a5b22946f08c40ecbef') in 0.0404519 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Face_AOQ_cold.tga
+  artifactKey: Guid(17d032a3595ff46a7bc1f70ce77b6c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Face_AOQ_cold.tga using Guid(17d032a3595ff46a7bc1f70ce77b6c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b8cef917b5319cb5715158d470af1cf9') in 0.047885 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000088 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Hair.tga
+  artifactKey: Guid(077462e6fefd3304986e58826fdef91f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Hair.tga using Guid(077462e6fefd3304986e58826fdef91f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '83d4e70b81b8aff7fb71bf7a92cc342c') in 0.0480745 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000094 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Face_Surprised_p1mid.tga
+  artifactKey: Guid(08d960a52ca9c4cdda9a90351a7f017b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Face_Surprised_p1mid.tga using Guid(08d960a52ca9c4cdda9a90351a7f017b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7eac087f0a4ea450ca183b218e16d64d') in 0.0456743 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000082 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Face_Anger_p1.tga
+  artifactKey: Guid(c88b97e8b2dbc400a9bad74e3d029286) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Face_Anger_p1.tga using Guid(c88b97e8b2dbc400a9bad74e3d029286) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b3587e90390cc75c44d4aea506c62dd1') in 0.0414279 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Face_Surprised_p2.tga
+  artifactKey: Guid(a3e77f3d639c149429eb7a09468f9132) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Face_Surprised_p2.tga using Guid(a3e77f3d639c149429eb7a09468f9132) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '59f7e2c32d5ce6a987444c61e69103fc') in 0.0403682 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000108 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Face_Anger_p3.tga
+  artifactKey: Guid(a2f42cfb825754eef954c5a6fce09d62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Face_Anger_p3.tga using Guid(a2f42cfb825754eef954c5a6fce09d62) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a96bc71b8ce0230b14b41ebefe3f5cd2') in 0.0430799 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000074 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Cube_Bottom.tga
+  artifactKey: Guid(a512ceb8eab787441b47bc3a70d6b3d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Cube_Bottom.tga using Guid(a512ceb8eab787441b47bc3a70d6b3d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd5b4c4e11c42de20d1874a7264fc2805') in 0.0414181 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000090 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Face_AOQ_guruguru.tga
+  artifactKey: Guid(b58b3a8e4ad4447929817fb4457d49eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Face_AOQ_guruguru.tga using Guid(b58b3a8e4ad4447929817fb4457d49eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '09b9a9c4b3fdb5fe0757cffbafa2dc31') in 0.0439415 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Face_Fun_p3.tga
+  artifactKey: Guid(306b3344d11b24117b317782d111c8bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Face_Fun_p3.tga using Guid(306b3344d11b24117b317782d111c8bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'aa3f2f050b0c36b16bbcc09099077a1d') in 0.0595413 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Cube_Front.tga
+  artifactKey: Guid(a1d559dd3a0d5b74bae5dd3976ca3fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Cube_Front.tga using Guid(a1d559dd3a0d5b74bae5dd3976ca3fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '973c78ed25d06977216e968d47f660cc') in 0.0495638 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000112 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Face_Surprised_p3.tga
+  artifactKey: Guid(1da3c01094a8f4a87959b41f6d2c2f38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Face_Surprised_p3.tga using Guid(1da3c01094a8f4a87959b41f6d2c2f38) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '458a71e5804b452f2d265216b68dc6e9') in 0.1025314 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000072 seconds.
+  path: Assets/PQAssets/Query-Chan/Textures/tex_Cube_Top.tga
+  artifactKey: Guid(ae06d16e36664564382df3b9c88cfcd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PQAssets/Query-Chan/Textures/tex_Cube_Top.tga using Guid(ae06d16e36664564382df3b9c88cfcd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1c7722bd15afb27f3bee583140d53256') in 0.0548436 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 96.096012 seconds.
+  path: Assets/New Terrain 1.asset
+  artifactKey: Guid(b41f9d960d2e10e4cb83e7ea0af4c23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Terrain 1.asset using Guid(b41f9d960d2e10e4cb83e7ea0af4c23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'faafd0e3f417f75b6c49cca831daebbe') in 0.0077172 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-ARP4-2TZD-3CUN-ZGFA-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: 2025-12-22T02:44:26Z
+[Licensing::Module] License group:
+  Id: 14569691882734-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+- Loaded All Assemblies, in  1.183 seconds
+Refreshing native plugins compatible for Editor in 1.76 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.139 seconds
+Domain Reload Profiling: 2319ms
+	BeginReloadAssembly (344ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (35ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (77ms)
+	RebuildCommonClasses (51ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (45ms)
+	LoadAllAssembliesAndSetupDomain (720ms)
+		LoadAssemblies (604ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (269ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (241ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (1140ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (891ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (9ms)
+			BeforeProcessingInitializeOnLoad (195ms)
+			ProcessInitializeOnLoadAttributes (575ms)
+			ProcessInitializeOnLoadMethodAttributes (93ms)
+			AfterProcessingInitializeOnLoad (15ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (32ms)
+Refreshing native plugins compatible for Editor in 2.45 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 25 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6134 unused Assets / (13.8 MB). Loaded Objects now: 6902.
+Memory consumption went from 161.8 MB to 148.0 MB.
+Total: 29.442300 ms (FindLiveObjects: 1.630700 ms CreateObjectMapping: 1.903800 ms MarkObjects: 9.666900 ms  DeleteObjects: 16.238200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-ARP4-2TZD-3CUN-ZGFA-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: 2025-12-22T02:44:26Z
+[Licensing::Module] License group:
+  Id: 14569691882734-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+- Loaded All Assemblies, in  1.168 seconds
+Refreshing native plugins compatible for Editor in 2.19 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.384 seconds
+Domain Reload Profiling: 2549ms
+	BeginReloadAssembly (301ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (67ms)
+	RebuildCommonClasses (51ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (48ms)
+	LoadAllAssembliesAndSetupDomain (746ms)
+		LoadAssemblies (597ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (287ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (256ms)
+			ResolveRequiredComponents (15ms)
+	FinalizeReload (1385ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1120ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (8ms)
+			BeforeProcessingInitializeOnLoad (201ms)
+			ProcessInitializeOnLoadAttributes (766ms)
+			ProcessInitializeOnLoadMethodAttributes (126ms)
+			AfterProcessingInitializeOnLoad (14ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (37ms)
+Refreshing native plugins compatible for Editor in 3.12 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 25 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6134 unused Assets / (13.4 MB). Loaded Objects now: 6905.
+Memory consumption went from 161.6 MB to 148.3 MB.
+Total: 29.702300 ms (FindLiveObjects: 1.623200 ms CreateObjectMapping: 1.995700 ms MarkObjects: 9.072200 ms  DeleteObjects: 17.007800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.222 seconds
+Refreshing native plugins compatible for Editor in 6.56 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.270 seconds
+Domain Reload Profiling: 2484ms
+	BeginReloadAssembly (319ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (68ms)
+	RebuildCommonClasses (56ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (57ms)
+	LoadAllAssembliesAndSetupDomain (762ms)
+		LoadAssemblies (642ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (282ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (248ms)
+			ResolveRequiredComponents (16ms)
+	FinalizeReload (1270ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1015ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (8ms)
+			BeforeProcessingInitializeOnLoad (212ms)
+			ProcessInitializeOnLoadAttributes (661ms)
+			ProcessInitializeOnLoadMethodAttributes (113ms)
+			AfterProcessingInitializeOnLoad (16ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (32ms)
+Refreshing native plugins compatible for Editor in 2.60 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 25 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6134 unused Assets / (13.7 MB). Loaded Objects now: 6908.
+Memory consumption went from 161.7 MB to 148.0 MB.
+Total: 28.914800 ms (FindLiveObjects: 1.764800 ms CreateObjectMapping: 2.044400 ms MarkObjects: 9.696500 ms  DeleteObjects: 15.406500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-ARP4-2TZD-3CUN-ZGFA-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: 2025-12-22T02:44:26Z
+[Licensing::Module] License group:
+  Id: 14569691882734-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+- Loaded All Assemblies, in  1.159 seconds
+Refreshing native plugins compatible for Editor in 2.51 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.140 seconds
+Domain Reload Profiling: 2294ms
+	BeginReloadAssembly (298ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (62ms)
+	RebuildCommonClasses (52ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (48ms)
+	LoadAllAssembliesAndSetupDomain (738ms)
+		LoadAssemblies (600ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (284ms)
+			TypeCache.Refresh (11ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (253ms)
+			ResolveRequiredComponents (14ms)
+	FinalizeReload (1140ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (899ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (8ms)
+			BeforeProcessingInitializeOnLoad (204ms)
+			ProcessInitializeOnLoadAttributes (556ms)
+			ProcessInitializeOnLoadMethodAttributes (112ms)
+			AfterProcessingInitializeOnLoad (14ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (31ms)
+Refreshing native plugins compatible for Editor in 3.02 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 25 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6134 unused Assets / (13.8 MB). Loaded Objects now: 6911.
+Memory consumption went from 161.7 MB to 148.0 MB.
+Total: 30.814200 ms (FindLiveObjects: 1.386500 ms CreateObjectMapping: 2.106600 ms MarkObjects: 9.178200 ms  DeleteObjects: 18.140700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
