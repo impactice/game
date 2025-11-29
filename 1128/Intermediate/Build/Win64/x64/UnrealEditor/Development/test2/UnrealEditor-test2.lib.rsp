@@ -1,0 +1,15 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-test2.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:/Users/champion/Documents/Unreal Projects/test2/Intermediate/Build/Win64/x64/test2Editor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
+"C:/Users/champion/Documents/Unreal Projects/test2/Intermediate/Build/Win64/x64/UnrealEditor/Development/test2/Module.test2.gen.cpp.obj"
+"C:/Users/champion/Documents/Unreal Projects/test2/Intermediate/Build/Win64/x64/UnrealEditor/Development/test2/MyActor.cpp.obj"
+"C:/Users/champion/Documents/Unreal Projects/test2/Intermediate/Build/Win64/x64/UnrealEditor/Development/test2/test2.cpp.obj"
+"C:/Users/champion/Documents/Unreal Projects/test2/Intermediate/Build/Win64/x64/UnrealEditor/Development/test2/PerModuleInline.gen.cpp.obj"
+"C:/Users/champion/Documents/Unreal Projects/test2/Intermediate/Build/Win64/x64/UnrealEditor/Development/test2/Default.rc2.res"
+/OUT:"C:/Users/champion/Documents/Unreal Projects/test2/Intermediate/Build/Win64/x64/UnrealEditor/Development/test2/UnrealEditor-test2.lib"
