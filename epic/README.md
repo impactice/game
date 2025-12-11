@@ -652,3 +652,457 @@ public class CitySample : ModuleRules
 ## 블루프린트 
 <img width="1919" height="1029" alt="image" src="https://github.com/user-attachments/assets/1561d22d-f6af-44de-9119-fe76d825ae1e" />
 
+## 버그 수정중...
+
+```
+// FlyCharacter.h
+#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/Character.h"
+#include "InputActionValue.h"
+#include "FlyCharacter.generated.h"
+
+// 전방 선언
+class UInputMappingContext;
+class UInputAction;
+class UCameraComponent;
+class USpringArmComponent;
+class UNiagaraComponent;
+class UNiagaraSystem;
+class UCameraShakeBase;
+class UAudioComponent;
+
+UCLASS()
+class CITYSAMPLE_API AFlyCharacter : public ACharacter
+{
+	GENERATED_BODY()
+
+public:
+	AFlyCharacter();
+
+protected:
+	virtual void BeginPlay() override;
+
+	// [수정됨] 이 줄이 없어서 빨간 줄이 떴던 겁니다. 추가했습니다.
+	virtual void PawnClientRestart() override;
+
+public:
+	virtual void Tick(float DeltaTime) override;
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+public:
+	// --- 컴포넌트 ---
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	USpringArmComponent* CameraBoom;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	UCameraComponent* FollowCamera;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = VFX)
+	UNiagaraComponent* SpeedLinesComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Audio)
+	UAudioComponent* WindAudioComponent;
+
+	// --- 입력 액션 ---
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+	UInputMappingContext* DefaultMappingContext;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+	UInputAction* MoveAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+	UInputAction* LookAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+	UInputAction* FlyAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+	UInputAction* FlyUpAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+	UInputAction* SprintAction;
+
+	// --- 비행 설정 ---
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Flight")
+	bool bIsFlying;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Flight")
+	bool bIsSprinting;
+
+	UPROPERTY(EditAnywhere, Category = "Flight Settings")
+	float FlightSpeed;
+
+	UPROPERTY(EditAnywhere, Category = "Flight Settings")
+	float SprintFlightSpeed;
+
+	UPROPERTY(EditAnywhere, Category = "Flight Settings")
+	float FlightAcceleration;
+
+	UPROPERTY(EditAnywhere, Category = "Flight Settings")
+	float SprintAcceleration;
+
+	UPROPERTY(EditAnywhere, Category = "Flight Settings")
+	float MaxRollAngle = 45.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Flight Settings")
+	float RollInterpSpeed = 2.5f;
+
+	// --- 카메라 설정 ---
+	UPROPERTY(EditAnywhere, Category = "Camera Settings")
+	float BaseFOV = 90.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Camera Settings")
+	float SprintFOV = 110.0f;
+
+	// --- VFX & SFX ---
+	UPROPERTY(EditAnywhere, Category = "VFX")
+	UNiagaraSystem* SonicBoomVFX;
+
+	UPROPERTY(EditAnywhere, Category = "VFX")
+	TSubclassOf<UCameraShakeBase> HighSpeedCameraShakeClass;
+
+protected:
+	void Move(const FInputActionValue& Value);
+	void Look(const FInputActionValue& Value);
+	void FlyUp(const FInputActionValue& Value);
+	void ToggleFlight(const FInputActionValue& Value);
+
+	void StartSprint(const FInputActionValue& Value);
+	void StopSprint(const FInputActionValue& Value);
+
+	void UpdateFlightRotation(float DeltaTime);
+	void UpdateCameraFOV(float DeltaTime);
+	void UpdateWindSound();
+	void TriggerSonicBoom();
+
+private:
+	float CurrentRoll = 0.0f;
+};
+```
+
+
+```
+// FlyCharacter.cpp
+#include "FlyCharacter.h"
+#include "GameFramework/CharacterMovementComponent.h"
+#include "Components/CapsuleComponent.h"
+#include "Camera/CameraComponent.h"
+#include "GameFramework/SpringArmComponent.h"
+#include "EnhancedInputComponent.h"
+#include "EnhancedInputSubsystems.h"
+#include "NiagaraComponent.h"
+#include "NiagaraFunctionLibrary.h"
+#include "Components/AudioComponent.h"
+#include "Kismet/KismetMathLibrary.h"
+#include "GameFramework/PlayerController.h"
+#include "Engine/Engine.h" // 디버그 메시지용 헤더
+
+AFlyCharacter::AFlyCharacter()
+{
+	PrimaryActorTick.bCanEverTick = true;
+
+	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
+
+	bUseControllerRotationPitch = false;
+	bUseControllerRotationYaw = false;
+	bUseControllerRotationRoll = false;
+
+	GetCharacterMovement()->bOrientRotationToMovement = true;
+	GetCharacterMovement()->RotationRate = FRotator(0.0f, 500.0f, 0.0f);
+	GetCharacterMovement()->JumpZVelocity = 700.f;
+	GetCharacterMovement()->AirControl = 0.35f;
+	GetCharacterMovement()->MaxWalkSpeed = 500.f;
+	GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
+	GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
+
+	// 비행 모드 설정
+	GetCharacterMovement()->BrakingDecelerationFlying = 2000.0f;
+	GetCharacterMovement()->MaxFlySpeed = 6000.0f;
+	GetCharacterMovement()->DefaultLandMovementMode = MOVE_Walking;
+
+	FlightSpeed = 4000.0f;
+	SprintFlightSpeed = 15000.0f;
+	FlightAcceleration = 4000.0f;
+	SprintAcceleration = 25000.0f;
+
+	bIsFlying = false;
+	bIsSprinting = false;
+
+	// 카메라 붐
+	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
+	CameraBoom->SetupAttachment(RootComponent);
+	CameraBoom->TargetArmLength = 400.0f;
+	CameraBoom->bUsePawnControlRotation = true;
+	CameraBoom->bEnableCameraLag = true;
+	CameraBoom->CameraLagSpeed = 10.0f;
+
+	// 카메라
+	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
+	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
+	FollowCamera->bUsePawnControlRotation = false;
+
+	// 속도 이펙트
+	SpeedLinesComponent = CreateDefaultSubobject<UNiagaraComponent>(TEXT("SpeedLines"));
+	SpeedLinesComponent->SetupAttachment(RootComponent);
+	SpeedLinesComponent->bAutoActivate = false;
+
+	// 바람 사운드
+	WindAudioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("WindAudio"));
+	WindAudioComponent->SetupAttachment(RootComponent);
+}
+
+void AFlyCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+}
+
+//
+// ★ 요청한 기능 완전체: PawnClientRestart 개선 버전 적용 ★
+//
+void AFlyCharacter::PawnClientRestart()
+{
+	Super::PawnClientRestart();
+
+	// 1) 플레이어 컨트롤러 확인
+	if (APlayerController* PC = Cast<APlayerController>(GetController()))
+	{
+		// 2) Enhanced Input Subsystem 가져오기
+		if (UEnhancedInputLocalPlayerSubsystem* Subsystem =
+			ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PC->GetLocalPlayer()))
+		{
+			// 기존 매핑 싹 제거
+			Subsystem->ClearAllMappings();
+
+			// 요청한 코드 적용: MappingContext 우선순위 100으로 등록
+			if (DefaultMappingContext)
+			{
+				Subsystem->AddMappingContext(DefaultMappingContext, 100);
+			}
+		}
+
+		// 입력 모드 게임 전용
+		FInputModeGameOnly InputMode;
+		PC->SetInputMode(InputMode);
+		PC->SetShowMouseCursor(false);
+	}
+}
+
+void AFlyCharacter::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	if (bIsFlying)
+	{
+		UpdateFlightRotation(DeltaTime);
+		UpdateCameraFOV(DeltaTime);
+	}
+
+	UpdateWindSound();
+}
+
+void AFlyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
+	{
+		if (MoveAction) EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AFlyCharacter::Move);
+		if (LookAction) EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AFlyCharacter::Look);
+		if (FlyAction) EnhancedInputComponent->BindAction(FlyAction, ETriggerEvent::Started, this, &AFlyCharacter::ToggleFlight);
+		if (FlyUpAction) EnhancedInputComponent->BindAction(FlyUpAction, ETriggerEvent::Triggered, this, &AFlyCharacter::FlyUp);
+
+		if (SprintAction)
+		{
+			EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Started, this, &AFlyCharacter::StartSprint);
+			EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Completed, this, &AFlyCharacter::StopSprint);
+		}
+	}
+}
+
+void AFlyCharacter::Move(const FInputActionValue& Value)
+{
+	FVector2D MovementVector = Value.Get<FVector2D>();
+
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(1, 0.0f, FColor::Yellow,
+			FString::Printf(TEXT("Input: X=%.2f Y=%.2f | Mode: %s | Speed: %.2f"),
+				MovementVector.X, MovementVector.Y,
+				bIsFlying ? TEXT("Flying") : TEXT("Walking"),
+				GetVelocity().Size()));
+	}
+
+	if (Controller != nullptr)
+	{
+		const FRotator Rotation = Controller->GetControlRotation();
+
+		if (bIsFlying)
+		{
+			const FVector ForwardDirection = Rotation.Vector();
+			const FVector RightDirection = FRotationMatrix(Rotation).GetScaledAxis(EAxis::Y);
+
+			if (GetCharacterMovement()->MovementMode != MOVE_Flying)
+			{
+				GetCharacterMovement()->SetMovementMode(MOVE_Flying);
+			}
+
+			AddMovementInput(ForwardDirection, MovementVector.Y);
+			AddMovementInput(RightDirection, MovementVector.X);
+		}
+		else
+		{
+			const FRotator YawRotation(0, Rotation.Yaw, 0);
+			const FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
+			const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
+
+			AddMovementInput(ForwardDirection, MovementVector.Y);
+			AddMovementInput(RightDirection, MovementVector.X);
+		}
+	}
+}
+
+void AFlyCharacter::Look(const FInputActionValue& Value)
+{
+	FVector2D LookAxisVector = Value.Get<FVector2D>();
+	if (Controller != nullptr)
+	{
+		AddControllerYawInput(LookAxisVector.X);
+		AddControllerPitchInput(LookAxisVector.Y);
+	}
+}
+
+void AFlyCharacter::FlyUp(const FInputActionValue& Value)
+{
+	float CurrentValue = Value.Get<float>();
+	if (bIsFlying && CurrentValue != 0.0f)
+	{
+		AddMovementInput(FVector::UpVector, CurrentValue);
+	}
+}
+
+void AFlyCharacter::ToggleFlight(const FInputActionValue& Value)
+{
+	bIsFlying = !bIsFlying;
+
+	if (bIsFlying)
+	{
+		GetCharacterMovement()->SetMovementMode(MOVE_Flying);
+
+		GetCharacterMovement()->MaxFlySpeed = FlightSpeed > 0 ? FlightSpeed : 4000.0f;
+		GetCharacterMovement()->bOrientRotationToMovement = false;
+	}
+	else
+	{
+		GetCharacterMovement()->SetMovementMode(MOVE_Walking);
+		GetCharacterMovement()->bOrientRotationToMovement = true;
+
+		FRotator CurrentRot = GetActorRotation();
+		SetActorRotation(FRotator(0.0f, CurrentRot.Yaw, 0.0f));
+
+		if (SpeedLinesComponent) SpeedLinesComponent->Deactivate();
+		bIsSprinting = false;
+	}
+}
+
+void AFlyCharacter::StartSprint(const FInputActionValue& Value)
+{
+	if (!bIsFlying) return;
+
+	bIsSprinting = true;
+	GetCharacterMovement()->MaxFlySpeed = SprintFlightSpeed;
+	GetCharacterMovement()->MaxAcceleration = SprintAcceleration;
+
+	if (SpeedLinesComponent) SpeedLinesComponent->Activate();
+	TriggerSonicBoom();
+
+	if (APlayerController* PC = Cast<APlayerController>(Controller))
+	{
+		if (HighSpeedCameraShakeClass)
+		{
+			PC->ClientStartCameraShake(HighSpeedCameraShakeClass, 1.0f);
+		}
+	}
+}
+
+void AFlyCharacter::StopSprint(const FInputActionValue& Value)
+{
+	bIsSprinting = false;
+
+	if (bIsFlying)
+	{
+		GetCharacterMovement()->MaxFlySpeed = FlightSpeed;
+		GetCharacterMovement()->MaxAcceleration = FlightAcceleration;
+
+		if (SpeedLinesComponent) SpeedLinesComponent->Deactivate();
+
+		if (APlayerController* PC = Cast<APlayerController>(Controller))
+		{
+			if (HighSpeedCameraShakeClass)
+			{
+				PC->ClientStopCameraShake(HighSpeedCameraShakeClass);
+			}
+		}
+	}
+}
+
+void AFlyCharacter::UpdateFlightRotation(float DeltaTime)
+{
+	if (!Controller) return;
+
+	FRotator ControlRot = Controller->GetControlRotation();
+	FRotator ActorRot = GetActorRotation();
+	FRotator DeltaRot = UKismetMathLibrary::NormalizedDeltaRotator(ControlRot, ActorRot);
+
+	float TargetRoll = FMath::Clamp(DeltaRot.Yaw * 1.5f, -MaxRollAngle, MaxRollAngle);
+	CurrentRoll = FMath::FInterpTo(CurrentRoll, TargetRoll, DeltaTime, RollInterpSpeed);
+
+	FRotator NewRot = FMath::RInterpTo(ActorRot, ControlRot, DeltaTime, 10.0f);
+	NewRot.Roll = CurrentRoll;
+
+	SetActorRotation(NewRot);
+}
+
+void AFlyCharacter::UpdateCameraFOV(float DeltaTime)
+{
+	float TargetFOV = bIsSprinting ? SprintFOV : BaseFOV;
+	float NewFOV = FMath::FInterpTo(FollowCamera->FieldOfView, TargetFOV, DeltaTime, 5.0f);
+	FollowCamera->SetFieldOfView(NewFOV);
+}
+
+void AFlyCharacter::TriggerSonicBoom()
+{
+	if (SonicBoomVFX)
+	{
+		UNiagaraFunctionLibrary::SpawnSystemAttached(
+			SonicBoomVFX,
+			GetMesh(),
+			FName("Root"),
+			FVector::ZeroVector,
+			FRotator::ZeroRotator,
+			EAttachLocation::SnapToTarget,
+			true
+		);
+	}
+}
+
+void AFlyCharacter::UpdateWindSound()
+{
+	if (WindAudioComponent)
+	{
+		float CurrentVelocity = GetVelocity().Size();
+
+		float PitchMultiplier = UKismetMathLibrary::MapRangeClamped(CurrentVelocity, 0.0f, SprintFlightSpeed, 0.5f, 2.0f);
+		float VolumeMultiplier = UKismetMathLibrary::MapRangeClamped(CurrentVelocity, 0.0f, SprintFlightSpeed, 0.0f, 1.5f);
+
+		WindAudioComponent->SetPitchMultiplier(PitchMultiplier);
+		WindAudioComponent->SetVolumeMultiplier(VolumeMultiplier);
+
+		if (!WindAudioComponent->IsPlaying() && CurrentVelocity > 10.0f)
+		{
+			WindAudioComponent->Play();
+		}
+	}
+}
+
+```
+
